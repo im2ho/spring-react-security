@@ -16,7 +16,7 @@ import com.kh.springChap01.repository.UserRepository;
 
 //api로 전달해서 호출
 @RestController
-@RequestMapping("api/user")
+@RequestMapping("/api/user")
 //cors : 쿠키나 세션 무언가 접속하는 것을 허용해줄 때 사용
 /*allowCredentials : 
 		브라우저에서 요청에 대한 응답을 할 때, 요청에 인증 정보(쿠키, HTTP 인증) 포함 여부를 나타냄
