@@ -1,0 +1,47 @@
+
+	다른 사이트의 정보를 가져와서 조회하고 나의 DB에 저장해서 다시 가져온다는 부분이 조금 다를 뿐, 기존 로그인 방식과 크게 다른 점은 없음
+
+	1. 
+	웹에서 요청이 들어옴
+	
+	2. 
+	구글로 로그인 요청이 들어옴
+	
+	3. 
+	구글로 로그인 할 수 있는 공간으로 이동
+	
+	4. 
+	/oauth/loginSuccess 공간으로 이동
+	
+	5. 
+	해당하는 메서드에서 OAuth2 사용해서 사용자 정보 가져오고, 가져온 정보를 데이터베이스에 저장하거나
+	그대로 세션에 가지고 있는 상태로 loginSuccess라는 html 파일로 이동
+	
+	6. 
+	UserDetailsServiceImpl 안에 있는 loadIserByUsername 메서드에서 사용자 정보를
+	DB에 저장하거나 가지고있는 상태에서, Spring Security에서 UserDetail 객체로 사용자 정보를 다시 전달
+	
+	7. 
+	해당 UserDetails 객체는 Spring Security에서 인증과 권한 부여에 사용 가능
+	
+	8. 
+	또는 DB에 저장을 하거나 저장이 되어있는 정보를 가지고있을 수 있음
+	
+	9. 
+	UserGoogleRepository와 UserRepository를 사용해서 DB에 저장된 사용자 정보 조회, 조작 가능
+	
+	10.
+	UserServiceImpl에서는 UserGoogleRepository를 받아서 이 레포지토리를 통해 사용자 정보를 처리할 수 있음
+	
+	+++++++++++++++++++++++++++++++++++++++++++++++++++
+	
+	@AuthenticationPrincipal OAuth2User oauthUser
+	
+	@AuthenticationPrincipal :
+		Spring Security 제공하는 어노테이션으로, 현재 사용자에 인증정보에 대해 접근할 때 사용
+		
+	OAuth2User : 
+		OAtuth2.0으로 인증된 사용자 정보를 나타낼 수 있는 인터페이스
+	
+	oauthUser : 
+		파라미터의 이름으로, 로그인 할 경우 사용자에 정보를 담고있음

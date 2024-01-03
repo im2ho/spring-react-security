@@ -9,7 +9,7 @@ const Product = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8080/api/item')
+      .get('http://localhost:8081/api/product/item')
       .then((response) => {
         setProducts(response.data);
       })
@@ -20,7 +20,7 @@ const Product = () => {
 
   const handleAddProduct = () => {
     axios
-      .post('http://localhost:8080/api/item/add', newProduct)
+      .post('http://localhost:8081/api/product/add', newProduct)
       .then((response) => {
         setProducts((prevProducts) => [...prevProducts, response.data]);
         setNewProduct({ name: '', price: 0 });
@@ -37,7 +37,7 @@ const Product = () => {
     }
 
     axios
-      .put(`http://localhost:8080/api/item/update/${editingProduct.id}`, newProduct)
+      .put(`http://localhost:8081/api/product/update/${editingProduct.id}`, newProduct)
       .then((response) => {
         setProducts((prevProducts) => {
           const updatedProducts = prevProducts.map((product) => {

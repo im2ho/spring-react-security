@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kh.mapper.ProductMapper">
+	<select id="getAllProduct" resultType="com.kh.model.Products">
+		SELECT * FROM products
+	</select>
+	
+	<insert id="addProduct" parameterType="com.kh.model.Products">
+		<selectKey resultType="java.lang.Long" keyProperty="productSeq" order="BEFORE">
+			SELECT products_seq.NEXTVAL AS productSeq FROM DUAL
+		</selectKey>
+		INSERT INTO products VALUES (#{productSeq}, #{name}, #{price})
+	</insert>
+
+</mapper>
+
+<!-- PrdouctMapper.xml -->
