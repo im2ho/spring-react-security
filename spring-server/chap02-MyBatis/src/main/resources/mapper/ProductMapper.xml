@@ -10,7 +10,7 @@
 		<selectKey resultType="java.lang.Long" keyProperty="productSeq" order="BEFORE">
 			SELECT products_seq.NEXTVAL AS productSeq FROM DUAL
 		</selectKey>
-		INSERT INTO products VALUES (#{productSeq}, #{name}, #{price})
+		INSERT INTO products(productSeq, name, price) VALUES (#{productSeq}, #{name}, #{price})
 	</insert>
 
 </mapper>

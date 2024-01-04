@@ -1,19 +1,28 @@
 import '../css/App.css';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import User from './Users';
-import Product from './Products';
+import GoogleApp from './GoogleApp';
+import NaverApp from './NaverApp';
+import KakaoApp from './KakaoApp';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <Router>
-      <Link to="/userlist">Users</Link>
-      <Link to="/itemlist">Items</Link>
+    <div style={{textAlign:"center", marginTop:"100px"}}>
+      {/*<Link to="/userlist">Users</Link>
+      <Link to="/itemlist" style={{marginLeft:"10px"}}>Items</Link>*/}
       <h1>React from SpringBoot</h1> 
-      <Routes>
-        <Route path="/userlist" element={<User />}/>
-        <Route path="/itemlist" element={<Product />}/>
-      </Routes>
-    </Router>
+      <div className="card py-5" style={{marginTop: "30PX", width:"500px", margin:"auto"}}>
+        <h2>Log In</h2>
+        <div className="mt-5">
+          <GoogleApp />
+        </div>
+        <div style={{marginTop:"10px"}}>
+          <NaverApp  />
+        </div>
+        <div style={{marginTop:"10px"}}>
+          <KakaoApp  />
+        </div>
+      </div>
+    </div>
   );
 }
 
