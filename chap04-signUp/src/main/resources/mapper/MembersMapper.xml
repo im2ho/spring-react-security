@@ -1,0 +1,9 @@
+<!-- MembersMapper.xml -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.signup.mapper.MembersMapper">
+	<!-- 회원 등록 -->
+	<insert id="insertMember" parameterType="com.signup.model.Member">
+		INSERT INTO Members (MemberID, Username, Password, fullName, Email, RegistrationDate)
+		VALUES(memberSeq.NEXTVAL, #{username}, #{password}, #{fullName}, #{email}, SYSDATE)
+	</insert>
+</mapper>
