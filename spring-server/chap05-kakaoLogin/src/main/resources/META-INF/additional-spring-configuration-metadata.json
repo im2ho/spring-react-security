@@ -1,0 +1,37 @@
+{"properties": [
+  {
+    "name": "spring.security.user.role",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.security.user.role'"
+  },
+  {
+    "name": "kakao.client.id",
+    "type": "java.lang.String",
+    "description": "A description for 'kakao.client.id'"
+  },
+  {
+    "name": "kakao.redirect.url",
+    "type": "java.lang.String",
+    "description": "A description for 'kakao.redirect.url'"
+  },
+  {
+    "name": "kakao.client.secret",
+    "type": "java.lang.String",
+    "description": "A description for 'kakao.client.secret'"
+  },
+  {
+    "name": "naver.client.id",
+    "type": "java.lang.String",
+    "description": "A description for 'naver.client.id'"
+  },
+  {
+    "name": "naver.client.secret",
+    "type": "java.lang.String",
+    "description": "A description for 'naver.client.secret'"
+  },
+  {
+    "name": "naver.redirect.url",
+    "type": "java.lang.String",
+    "description": "A description for 'naver.redirect.url'"
+  }
+]}
