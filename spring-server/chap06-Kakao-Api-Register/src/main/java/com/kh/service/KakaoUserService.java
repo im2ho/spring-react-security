@@ -47,6 +47,7 @@ public class KakaoUserService {
                 + "&response_type=code";
     }
 	
+	//Database가 아닌, 카카오톡에서 인증한 이메일을 가지고 온다
 	public KakaoDTO getKakaoInfo(String code, String name, String birthdate) throws Exception{
 		if(code == null) throw new Exception("존재하는 인증 코드가 없습니다.");
 		
